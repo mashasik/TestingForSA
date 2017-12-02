@@ -83,14 +83,14 @@
 					html += "</ul>";
 					html += "<div class=\"nav-container\">";
 
-					html += "<div class=\"notice alert alert-info\">Выберите ответ</div>";
+					html += "<div class=\"notice alert alert-info\">Оберіть відповідь</div>";
 
 					if (index != 0) {
-						html += "<button class=\"prev btn btn-info\"><i class='icon-arrow-left icon-white'></i> Предыдущий</button>";
+						html += "<button class=\"prev btn btn-info\"><i class='icon-arrow-left icon-white'></i> Попередній</button>";
 					}
 
 					if (index != questions.length - 1) {
-						html += "<button class=\"next btn btn-success\">Следующий <i class='icon-arrow-right icon-white'></i></button>";
+						html += "<button class=\"next btn btn-success\">Наступний <i class='icon-arrow-right icon-white'></i></button>";
 						html += "<div style=\"clear:both\"></div>";
 
 					} else {
@@ -140,7 +140,7 @@
 						if (percentage > 100) percentage = 100;
 						$("#percent").css("width", percentage + "%");
 
-						var resultHTML = "<h3 style=\"text-align: center\">РЕЗУЛЬТАТЫ</h3>";
+						var resultHTML = "<h3 style=\"text-align: center\">Результати</h3>";
 
 						var buttonsHTML = '';
 						$.each(questions, function (index, question) {
@@ -150,13 +150,13 @@
 								element.removeClass("btn-info");
 								element.addClass("btn-success");
 
-								buttonsHTML += "<button class=\"btn btn-success\"><i class='icon-ok-sign icon-white'></i> Вопрос " + (index + 1) + "</button>";
+								buttonsHTML += "<button class=\"btn btn-success\"><i class='icon-ok-sign icon-white'></i> Питання " + (index + 1) + "</button>";
 								rightAnswers++;
 							} else {
 								element.removeClass("btn-info");
 								element.addClass("btn-danger");
 
-								buttonsHTML += "<button class=\"btn btn-danger\"><i class='icon-remove-sign icon-white'></i> Вопрос " + (index + 1) + "</button>";
+								buttonsHTML += "<button class=\"btn btn-danger\"><i class='icon-remove-sign icon-white'></i> Питання " + (index + 1) + "</button>";
 
 								for (var i = 0; i < question.correct.length; i++) {
 									element.parent().find('li').eq(question.correct[i]).addClass("btn-success");
@@ -164,9 +164,9 @@
 							}
 						});
 
-						resultHTML += "<p style=\"margin: 14px 0px\">Вы ответили на " + Math.round(((rightAnswers * 100) / questions.length) * 100) / 100 + "% вопросов.</p>";
+						resultHTML += "<p style=\"margin: 14px 0px\">Ви відповіли на " + Math.round(((rightAnswers * 100) / questions.length) * 100) / 100 + "% питань.</p>";
 						resultHTML += buttonsHTML;
-						resultHTML += "<p style=\"margin-top:25px; text-align: center\"><button class=\"btn btn-large tostart\">Просмотреть вопросы</button></p>";
+						resultHTML += "<p style=\"margin-top:25px; text-align: center\"><button class=\"btn btn-large tostart\">Подивитись відповіді</button></p>";
 
 						div.animate({
 							opacity: '0'
