@@ -5,17 +5,19 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>Системний аналіз</title>
 	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/jQuizler.css" />
+	<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+	<span id="timer" class="block time">10:00</span>
+	
 	<div id="jQuizler" class="main-quiz-holder">
 		<h3>Тест на тему: "Системний аналіз"</h3>
-		<button class="btn btn-large">Почати</button>
+		<button class="btn btn-large" onclick="timer()">Почати</button>	
 	</div>
 
 	<div class="block">
-		<button type="button" class="btn btn-large" data-toggle="modal" data-target="#About">Розробники</button>
+		<button type="button" class="btn btn-large" data-toggle="modal" data-target="#About">Автори</button>
 		<div class="modal fade" id="About" role="dialog">
 			<article class="modal-dialog">
 				<div class="modal-content">
@@ -38,6 +40,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jQuizler.js"></script>
 	<script src="js/questions.js"></script>
+	<script src="js/timer.js"></script>
 </body>
 
 </html>

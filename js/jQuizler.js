@@ -5,10 +5,8 @@
 				throw 'No questions was provided.';
 
 			var reviewQuiz = false;
-
 			var percentage = 0;
 			var percentPiece = 100 / questions.length;
-
 			var rightAnswers = 0;
 
 			$(this).html("<div class=\"intro\">" + $(this).html() + "</div>");
@@ -56,8 +54,6 @@
 
 				html += "<div class=\"results slide-container question\" style=\"display:none\"></div>";
 
-
-
 				$.each(questions, function (index, question) {
 					html += "<div id=\"question-" + (index + 1) + "\" class=\"slide-container question\">";
 
@@ -86,15 +82,14 @@
 					html += "<div class=\"notice alert alert-info\">Оберіть відповідь</div>";
 
 					if (index != 0) {
-						html += "<button class=\"prev btn btn-info\"><i class='icon-arrow-left icon-white'></i> Попередній</button>";
+						html += "<button class=\"prev btn btn-info\">Попередній</button>";
 					}
 
 					if (index != questions.length - 1) {
-						html += "<button class=\"next btn btn-success\">Наступний <i class='icon-arrow-right icon-white'></i></button>";
-						html += "<div style=\"clear:both\"></div>";
-
+						html += "<button class=\"next btn btn-success\">Наступний</button>";
+						html += "<div style=\"clear:both\"></div>";	
 					} else {
-						html += "<button class=\"final btn btn-success\">Результат <i class='icon-ok icon-white'></i></button>";
+						html += "<button class=\"final btn btn-success\">Результат</button>";
 						html += "<div style=\"clear:both\"></div>";
 					}
 
@@ -102,8 +97,6 @@
 
 					html += "</div>";
 				});
-
-
 
 				html += "<div class=\"progress progress-info progress-striped\">";
 				html += "<div id=\"percent\" class=\"bar\" style=\"width: 0%;\"></div>";
@@ -117,8 +110,6 @@
 						$(this).toggleClass("btn-info");
 					}
 				});
-
-
 
 				$(".final").click(function (e) {
 					var div = $(e.target).closest("div[id*='question-']");
@@ -150,13 +141,13 @@
 								element.removeClass("btn-info");
 								element.addClass("btn-success");
 
-								buttonsHTML += "<button class=\"btn btn-success\"><i class='icon-ok-sign icon-white'></i> Питання " + (index + 1) + "</button>";
+								buttonsHTML += "<button class=\"btn btn-success\"> Питання " + (index + 1) + "</button>";
 								rightAnswers++;
 							} else {
 								element.removeClass("btn-info");
 								element.addClass("btn-danger");
 
-								buttonsHTML += "<button class=\"btn btn-danger\"><i class='icon-remove-sign icon-white'></i> Питання " + (index + 1) + "</button>";
+								buttonsHTML += "<button class=\"btn btn-danger\"> Питання " + (index + 1) + "</button>";
 
 								for (var i = 0; i < question.correct.length; i++) {
 									element.parent().find('li').eq(question.correct[i]).addClass("btn-success");
@@ -318,6 +309,5 @@
 			});
 		}
 	});
-
 
 })(jQuery);
